@@ -10,6 +10,10 @@ async function fetcheveryfivemin() {
         console.log("Ping nos sites")
     });
 
+    fetchUrl("https://www.youtube.com/watch?v=_hB9X1bLjFc", function(error, meta, body){
+        console.log("Ping nos sites")
+    });
+
 }
 fetcheveryfivemin()
 setInterval(function(){

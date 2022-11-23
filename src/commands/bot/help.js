@@ -19,6 +19,6 @@ module.exports = class extends Command {
                     .setURL("https://example.com"),
                     //.setEmoji('123456789012345678'),
 			);
-		await interaction.reply({ content: 'Aqui vem a ajuda!', components: [row] });
+		await interaction.reply({ content: 'Aqui vem a ajuda! commands: /contador. /bal. /invite. /say', components: [row] });
 	}
 }

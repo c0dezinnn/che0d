@@ -1,0 +1,16 @@
+const Command = require('../../structures/Command')
+
+--consts
+
+module.exports = class extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'comandname',
+            description: 'descricao do comando',
+            options: []
+        })
+    }
+    run = async (interaction) => {
+		await interaction.reply({ content: 'Aqui vem a ajuda!', components: [row] });
+	}
+}
