@@ -15,6 +15,6 @@ const client = new Client({
   ]
 })
 
-
+console.log("rodando")
 
 client.login(process.env.BOT_TOKEN)
