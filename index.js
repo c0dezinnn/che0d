@@ -15,6 +15,6 @@ const client = new Client({
   ]
 })
 
-
+console.log("começou a saga do nuggets")
 
 client.login(process.env.BOT_TOKEN)
