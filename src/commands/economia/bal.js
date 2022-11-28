@@ -1,7 +1,4 @@
 const Command = require('../../structures/Command')
-
-
-
 module.exports = class extends Command {
     constructor(client) {
         super(client, {
@@ -12,7 +9,8 @@ module.exports = class extends Command {
         })
     }
     run = async (interaction) => {
-        console.log(interaction.user.db.infos)
+        //var userdbatt = await <model>>.findOne({ '_id': `${interaction.user.id}` })
+        console.log(interaction.user.db)
 		await interaction.reply({ content: `Aqui vem suas coins`});
 	}
 }
