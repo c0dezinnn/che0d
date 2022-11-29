@@ -1,6 +1,5 @@
 const Command = require('../../structures/Command')
 const {MessageActionRow, MessageButton} = require('discord.js')
-const { InteractionResponseTypes } = require('discord.js/typings/enums')
 const row = new MessageActionRow()
     .addComponents(
         [
