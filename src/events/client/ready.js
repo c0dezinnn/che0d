@@ -21,6 +21,14 @@ module.exports = class extends Event {
     adapterCreator: canalvoz.guild.voiceAdapterCreator,
   });
 
+  const { AutoPoster } = require('topgg-autoposter')
+
+  const ap = AutoPoster(process.env.topggtoken, this.client)
+  
+  ap.on('posted', () => {
+    console.log('Posted stats to Top.gg!')
+  })
+
   }
   
 }
