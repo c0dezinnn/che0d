@@ -1,5 +1,5 @@
 const Event = require('../../structures/Event')
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed, MessageButton, MessageActionRow } = require('discord.js')
 const ticketCategories = require('../../util/ticketCategories.js')
 const request = require('request')
 const fs = require('fs')
@@ -101,9 +101,9 @@ interaction.channel.awaitMessages({ filter: msg_filter, max: 1 })
           ]
       })
 
-      interaction.reply('O ticket será fechado em 20 segundos.')
+      interaction.reply('O ticket será fechado em 5 segundos.')
 
-      setTimeout(() => interaction.channel.delete(), 20000)
+      setTimeout(() => interaction.channel.delete(), 5000)
   }
 }
 }
