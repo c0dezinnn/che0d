@@ -8,6 +8,16 @@ module.exports = class extends Event {
   }
   run = async () => {
     this.client.user.setStatus('idle');
+    let activities = [
+      `${this.client.guilds.cache.size} servidores`,
+      `${this.client.users.cache.size} usuarios`,
+      `Meu servidor de suporte`,
+      'Sim'
+  ],
+  i = 0;
+  setInterval(() => this.client.user.setActivity(`${activities[i++ % activities.length]}`, {
+      type: "WATCHING" //WATCHING, LISTENING, PLAYING, STREAMING
+  }), 10000);// Defina o tempo do bot em mi
     console.log(`Bot ${this.client.user.username} logado com sucesso em ${this.client.guilds.cache.size} servidores.`)
     this.client.registryCommands()
     await this.client.connectToDatabase()
