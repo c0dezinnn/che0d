@@ -5,8 +5,8 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: 'mcskin',
-            description: 'veja e baixe a skin de alguem do minecraft(somente original)',
+            name: 'mcbody',
+            description: 'veja a skin de alguem no minecraft(somente original)',
             options: [
                 {
                 type: 'STRING',
@@ -30,7 +30,7 @@ module.exports = class extends Command {
                 .then(async player => {
                   await interaction.deferReply();
             await wait(3000);
-            interaction.editReply({content: `https://crafatar.com/skins/${player.id}?size=128&overlay`})
+            interaction.editReply({content: `https://crafatar.com/renders/body/${player.id}?size=128&overlay`})
             if(!player) {
               console.log("player não existe!")
             }
