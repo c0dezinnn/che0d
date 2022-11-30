@@ -24,13 +24,13 @@ module.exports = class extends Command {
 
         try {
             const fetch = require('node-fetch');
-            await fetch(`https://api.capybara-api.xyz/v1/image/random`)
+            await fetch(`https://api.mojang.com/users/profiles/minecraft/${playername}`)
                 .then(data => data.json())
                 
-                .then(async images => {
+                .then(async player => {
                   await interaction.deferReply();
             await wait(3000);
-            interaction.editReply({content: `${images.image_urls.original}`})
+            interaction.editReply({content: `https://crafatar.com/renders/body/${player.id}?size=128&overlay`})
             if(!player) {
               console.log("player não existe!")
             }

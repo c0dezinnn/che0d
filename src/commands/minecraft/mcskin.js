@@ -24,22 +24,22 @@ module.exports = class extends Command {
 
         try {
             const fetch = require('node-fetch');
-            await fetch(`https://api.capybara-api.xyz/v1/image/random`)
+            await fetch(`https://api.mojang.com/users/profiles/minecraft/${playername}`)
                 .then(data => data.json())
                 
-                .then(async images => {
+                .then(async player => {
                   await interaction.deferReply();
             await wait(3000);
-            interaction.editReply({content: `${images.image_urls.original}`})
-            if(!images) {
-              console.log("imagem não existe!")
+            interaction.editReply({content: `https://crafatar.com/skins/${player.id}?size=128&overlay`})
+            if(!player) {
+              console.log("player não existe!")
             }
             })
             } catch (err) {
                 console.log(err)
               await interaction.deferReply();
               await wait(3000);
-                interaction.editReply({content: `Algo deu errado...`})
+                interaction.editReply({content: `Opa essa conta com esse nick não foi encontrada! caso ela seja de pirata não havera como ver ela.`})
             }
             }
 	}

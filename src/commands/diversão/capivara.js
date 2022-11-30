@@ -5,8 +5,8 @@ const row = new MessageActionRow()
         [
             new MessageButton()
                 .setStyle('LINK')
-                .setLabel('Vote por aqui')
-                .setURL('https://top.gg/bot/1043726610936889425/vote')
+                .setLabel('Reportar erro')
+                .setURL('https://github.com/c0dezinnn/che0d/issues/new')
         ]
     )
 
@@ -28,12 +28,20 @@ module.exports = class extends Command {
             const fetch = require('node-fetch');
             await fetch(`https://api.capybara-api.xyz/v1/image/random`)
                 .then(data => data.json())
-            }catch (err) {
+                
+                .then(async images => {
+                  await interaction.deferReply();
+            await wait(1000);
+            interaction.editReply({content: `${images.image_urls.original}`})
+            if(!images) {
+              console.log("imagem não existe!")
+            }
+            })
+            } catch (err) {
                 console.log(err)
               await interaction.deferReply();
-              await wait(3000);
-                interaction.editReply({content: `Opa essa conta com esse nick não foi encontrada! caso ela seja de pirata não havera como ver ela.`})
+              await wait(1000);
+                interaction.editReply({content: `Algo deu errado, reporte o erro pelo botão abaixo`, components: [row]})
             }
-
-    }
-}
+            }
+	}
