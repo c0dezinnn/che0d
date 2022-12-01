@@ -25,6 +25,6 @@ module.exports = class extends Command {
     request(imageURL).pipe(fs.createWriteStream(imagename));
     await interaction.deferReply();
     await wait(3000);
-    interaction.editReply({content: `Ainda em desenvolvimento`})
+    interaction.editReply({content: `Ainda em desenvolvimento aguarde alguns dias!`})
   }
 }

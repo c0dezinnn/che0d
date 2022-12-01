@@ -15,11 +15,10 @@ module.exports = class extends Command {
     constructor(client) {
         super(client, {
             name: 'guilds',
-            description: 'seu pai',
+            description: 'Veja em quantos servidores eu estou',
             options: []
         })
     }
-
     run = async (interaction) => {
 
 if(interaction.user.id === "700157765053841438") {
