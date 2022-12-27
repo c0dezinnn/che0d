@@ -11,8 +11,7 @@ module.exports = class extends Event {
     let activities = [
       `${this.client.guilds.cache.size} servidores`,
       `${this.client.users.cache.size} usuarios`,
-      `Meu servidor de suporte`,
-      'Sim'
+      `Criado pelo C0de#6969`
   ],
   i = 0;
   setInterval(() => this.client.user.setActivity(`${activities[i++ % activities.length]}`, {
@@ -30,14 +29,15 @@ module.exports = class extends Event {
     guildId: canalvoz.guild.id,
     adapterCreator: canalvoz.guild.voiceAdapterCreator,
   });
-
-  const { AutoPoster } = require('topgg-autoposter')
+  setInterval(() => {
+    const { AutoPoster } = require('topgg-autoposter')
 
   const ap = AutoPoster(process.env.topggtoken, this.client)
   
   ap.on('posted', () => {
     console.log('Posted stats to Top.gg!')
   })
+  }, 60000)
 
   }
   

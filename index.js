@@ -2,7 +2,6 @@
 
 const Client = require('./src/structures/Client')
 const website = require('./src/website/index')
-const pings = require('./urob.js')
 const client = new Client({
   intents: [
     'GUILDS',
