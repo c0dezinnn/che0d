@@ -37,7 +37,7 @@ module.exports = class extends Event {
   ap.on('posted', () => {
     console.log('Posted stats to Top.gg!')
   })
-  }, 60000)
+  }, 100000)
 
   }
   

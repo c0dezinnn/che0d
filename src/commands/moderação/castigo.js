@@ -18,7 +18,7 @@ module.exports = class extends Command {
                 {
                     name: "tempo",
                     type: "STRING",
-                    description: "Coloque o tempo de duração do castigo em millesegundos.",
+                    description: "Coloque o tempo de duração do castigo em minutos.",
                     required: true
                     
                 },
@@ -38,22 +38,22 @@ module.exports = class extends Command {
         if (!interaction.member.permissions.has("ADMINISTRATOR")) {
             interaction.reply({ content: `Você não possui permissão para utilizar este comando.` })
         } else {
-
+            
         let usuario = interaction.options.getUser("membro");
 
         let membro = interaction.guild.members.cache.get(usuario.id);
         let tempo = interaction.options.getString("tempo");
+        let tempoemms = tempo * 60000
         let motivo = interaction.options.getString("motivo");
 
-        let duracao = ms(tempo);
 
         if (!membro) {
             interaction.reply({ content: `O usuário não está no servidor.` })
-        } else if (!duracao) {
+        } else if (!tempoemms) {
             interaction.reply({ content: `Insira um tempo válido.` })
         } else {
-            membro.timeout(duracao, motivo).then( () => {
-                interaction.reply({ content: `O membro \`${membro.user.tag}\` foi punido por \`${tempo}\`, pelo motivo \`${motivo}\`.`, ephemeral: false })
+            membro.timeout(tempoemms, motivo).then( () => {
+                interaction.reply({ content: `O membro \`${membro.user.tag}\` foi punido por \`${tempo}\`, pelo motivo \`${motivo}\`. Um dia quem sabe ele volte e respeite as regras`, ephemeral: true })
             })
         }
 

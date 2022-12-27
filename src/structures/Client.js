@@ -14,8 +14,8 @@ constructor (options) {
 }
 registryCommands(){
   //temporaria
-  this.guilds.cache.get('957769863311548426').commands.set(this.commands)
-  //this.application.commands.set(this.commands)
+  //this.guilds.cache.get('957769863311548426').commands.set(this.commands)
+  this.application.commands.set(this.commands)
 }
 
 loadCommands(path = 'src/commands'){

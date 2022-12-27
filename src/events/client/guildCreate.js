@@ -6,6 +6,6 @@ module.exports = class extends Event {
     })
   }
   run = async (guild) => {
-    console.log(guild.name)
+    
 }
 }
