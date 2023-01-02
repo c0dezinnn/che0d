@@ -38,6 +38,7 @@ module.exports = class extends Command {
         if (!interaction.member.permissions.has("ADMINISTRATOR")) {
             interaction.reply({ content: `Você não possui permissão para utilizar este comando.` })
         } else {
+         
             
         let usuario = interaction.options.getUser("membro");
 
